@@ -28,7 +28,7 @@ conda create --name ragchat python=3.9
 conda activate ragchat
 
 pip install -U pip
-pip install langchain python-dotenv openai streamlit pypdf 
+pip install langchain python-dotenv openai streamlit pypdf pytest
 
 streamlit run pdfchat.py
 
