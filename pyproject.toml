@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ragchat"
+version = "1.0"
+description = "A simple demo, using Retrieval Augmented Generation (RAG) and pdf utilities to create a chat interface."
+authors = [{name = "Christopher Snyder, MD PhD", email = "22csnyder@gmail.com"}]
+readme = "README.md"
+# license = {file = "LICENSE"}
+keywords = ["RAG", "chat", "PDF", "knowledge retrieval"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "langchain",
+    "python-dotenv",
+    "openai",
+    "streamlit",
+    "pypdf",
+    "pytest"
+]
+
+[project.urls]
+Homepage = "https://path-math.com/projects/2023-ragchat"
+# Repository = "https://github.com/22csnyder/ragchat"
+# Documentation = "URL to your project documentation"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "src/tests"
+]

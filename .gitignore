@@ -1,9 +1,11 @@
 .env
 .cache/
+*.egg-info/
+
 *.pyx
+*.pyc
 *.swp
 *.code-workspace
-
 
 
 .DS_Store
