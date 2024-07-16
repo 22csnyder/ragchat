@@ -14,34 +14,46 @@
     >>  streamlit run hello_rag_pdf.py
 
 """
+## Examples 
+For those without an API key, I kept a record of several [Q&A interactions](_results/sample_interactions.md) that are essentially representative. 
 
 
 ## Setup
+An API key and account with [openai](https://www.openai.com)
 
+#### Getting started:
 
+One of the embedding models is only available through conda, so venv is not recommended. 
 
-
+Recommended is to create an environment like so (using Anaconda or Miniconda):
+```sh
 conda create --name ragchat python=3.9
 conda activate ragchat
 
+Then install the dependencies defined in pyproject.toml:
+```python
 pip install -U pip
 python -m pip install --editable .
+```
 
-<!-- FAISS install 
-https://github.com/facebookresearch/faiss/blob/main/INSTALL.md -->
+This will make the /src/ragchat directory a toplevel import available to any project file.
+
+Now get that annoying last conda-forge dependency. Those meeting the hardware and driver requirements (not covered here) one may use faiss-gpu instead
+
+```sh
 conda install -c conda-forge faiss-cpu
-y
+```
+        > (Press y when prompted)
 
+Finally run the streamlit app.
 
-<!-- pip install langchain python-dotenv openai streamlit pypdf pytest -->
-
+```bash
+cd /src/ragchat
 streamlit run pdfchat.py
+```
 
+Sample data to play with is in /src/data. 
 
-
-
-
-#pip install -e .
 
 
 
