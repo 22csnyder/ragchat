@@ -22,7 +22,8 @@ dependencies = [
     "openai",
     "streamlit",
     "pypdf",
-    "pytest"
+    "pytest",
+    "tiktoken",
 ]
 
 [project.urls]
