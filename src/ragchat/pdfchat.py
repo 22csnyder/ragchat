@@ -1,20 +1,93 @@
 # %% Imports
-from pathlib import Path
-from dotenv import load_dotenv
 import os
-import openai
-
+from pathlib import Path
 
 import streamlit as st
+from dotenv import load_dotenv
 
+from langchain.chains.question_answering import load_qa_chain
+from langchain.text_splitter import CharacterTextSplitter
+from langchain_community.callbacks import get_openai_callback
+from langchain_community.embeddings.openai import OpenAIEmbeddings
+from langchain_community.llms import OpenAI
+from langchain_community.vectorstores import FAISS
 # from PyPDF2 import PdfReader
 from pypdf import PdfReader
-from langchain.text_splitter import CharacterTextSplitter
-from langchain.chains.question_answering import load_qa_chain
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.vectorstores import FAISS
-from langchain.llms import OpenAI
-from langchain.callbacks import get_openai_callback
+
+
+def hello_world():
+    return "Hello World"
+
+
+from typing import List
+
+# from langchain.knowledge import FAISS
+from langchain_community.vectorstores import FAISS
+
+# from langchain_community.llms import CharacterTextSplitter
+
+
+def create_embeddings_from_reader(reader) -> FAISS:
+    """
+    Takes a PDF reader object, extracts text, splits it into chunks,
+    and creates embeddings using OpenAIEmbeddings.
+
+    Args:
+        reader: A PDF reader object with a pages attribute.
+
+    Returns:
+        FAISS: A FAISS index object containing the embeddings of the text chunks.
+    """
+    # Extract text from all pages
+    text = "".join([pg.extract_text() for pg in reader.pages])
+
+    # Split into Chunks ("documents")
+    text_splitter = CharacterTextSplitter(
+        separator="\n|  ",
+        is_separator_regex=True,
+        chunk_size=2200,
+        chunk_overlap=400,
+        length_function=len,
+    )
+
+    chunks = text_splitter.split_text(text)
+
+    # Create embeddings
+    embeddings = OpenAIEmbeddings()
+    knowledge_base = FAISS.from_texts(chunks, embeddings)  # "FlatL2")
+
+    return knowledge_base
+
+
+
+class App:
+
+    def __init__(self):
+        """
+        __init__ initializes app consisting of page with two main components:
+                1. pdf: file_uploader to upload pdf file
+                2. user_question: text_input to ask question about pdf
+            streamlit listens for when either becomes not None after user entry.
+            (by default is hosted on localhost:8501)
+        """        
+        self.load_dotenv()#OPENAI KEY and/or other user-specific .env configuration
+        self.style_page()
+        # Ask to upload pdf file to extract text from
+        self.pdf = st.file_uploader("Upload your PDF", type="pdf")
+        # Box for user to input text
+        self.user_question = st.text_input("Ask a question about your PDF:")
+
+
+    def load_dotenv(self):
+        """
+        load_dotenv sets environment variable OPENAI_API_KEY if defined in .env file
+        """        
+        load_dotenv()
+
+    def style_page(self):
+        st.set_page_config(page_title="Ask your PDF")
+        st.header("Ask your PDF 💬")
+
 
 
 

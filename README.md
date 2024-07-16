@@ -20,15 +20,20 @@
 
 
 
-#conda create --name ragchat python=3.11
-#conda env create --name ragchat python=3.9
-
 
 conda create --name ragchat python=3.9
 conda activate ragchat
 
 pip install -U pip
-pip install langchain python-dotenv openai streamlit pypdf pytest
+python -m pip install --editable .
+
+<!-- FAISS install 
+https://github.com/facebookresearch/faiss/blob/main/INSTALL.md -->
+conda install -c conda-forge faiss-cpu
+y
+
+
+<!-- pip install langchain python-dotenv openai streamlit pypdf pytest -->
 
 streamlit run pdfchat.py
 
