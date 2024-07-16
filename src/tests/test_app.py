@@ -4,22 +4,17 @@ import unittest
 import pytest
 import streamlit as st
 
-from ragchat.pdfchat import App
-
 pth_pdf = 'src/data/txfsn-on_apheresis.pdf'
 
-class TestImports(unittest.TestCase):
-    def test_imports(self):
-        from ragchat.pdfchat import FAISS  # noqa
-        from ragchat.pdfchat import CharacterTextSplitter  # noqa
-        from ragchat.pdfchat import OpenAIEmbeddings  # noqa
 
-        self.assertTrue(True)
 
-# class TestApp:
-#     def test_init(self):
-#         # pass
-#         app = App()
+from ragchat.pdfchat import App
+
+
+class TestApp:
+    def test_init(self):
+        # pass
+        app = App()
 
 
     # @patch('streamlit.file_uploader')
@@ -42,7 +37,6 @@ class TestImports(unittest.TestCase):
     #     app.pdf = st. ( pth_pdf
     #     assert app.pdf
     #     app.pdf = None
-
 
 
 
