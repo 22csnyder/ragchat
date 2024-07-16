@@ -1,4 +1,8 @@
 .env
 .cache/
 *.pyx
+*.swp
+*.code-workspace
+
+
 
