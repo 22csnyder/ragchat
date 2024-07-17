@@ -19,7 +19,7 @@ For more information, visit the [project page](https://path-math.com/projects/20
 
 """
 ## Examples 
-For those without an API key, I kept a record of several [Q&A interactions](_results/sample-qa.md) that are essentially representative. 
+For those without an API key, I kept a record of several [Q&A interactions](_results/_files/sample-qa.md) that are essentially representative. 
 
 
 ## Setup
@@ -63,10 +63,8 @@ Sample data to play with is in /src/data.
 
 <video controls loop autoplay src="_results/_files/sr-smear-contacts.mp4" title="Q: Who You Going to Call ?!"></video>
 
-<!-- 
-![alt text](_results/_files/sr-smear-contacts_5MB.gif) -->
 ["Q: Who You Going to Call ?!"](_results/_files/sr-smear-contacts.webm)
 
 <video controls loop autoplay src="_results/_files/sr-smear-contacts.mp4" title="Q: Who You Going to Call ?!"></video>
 
-<video controls loop autoplay src="_results/_files/sr-argatroban.mp4" title="Q: Which Anticoagulants Have the Shortest Half-Life ?!"></video>
+<video controls loop autoplay src="_results/_files/sr-argatroban.mp4" title="Q: Which Anticoagulants Have the Shortest Half-Life ?"></video>
