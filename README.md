@@ -1,11 +1,15 @@
 # ragchat
 ## Intro
+
+<img src="_results/_images/thumbnail.png" alt="alt text" width="400" /> <!-- Adjust the width as needed -->
+
+
+
 ### A simple demo, using Retrieval Augmented Generation (RAG) and pdf utilities to create a chat interface one may use to ask questions of some laboratory documentation, protocols, or inventory data. (Some simple example data provided)
 
+For more information, visit the [project page](https://path-math.com/projects/2023-ragchat/).
 
-""" hello_rag_pdf.py            11/28/2023
-
-    Summary:
+### Summary:              11/28/2023
     This is a document to test out simple knowledge retrieval from documents in simple cases. Also this is a first pass at langchain
 
     Notes:
@@ -15,7 +19,7 @@
 
 """
 ## Examples 
-For those without an API key, I kept a record of several [Q&A interactions](_results/sample_interactions.md) that are essentially representative. 
+For those without an API key, I kept a record of several [Q&A interactions](_results/sample-qa.md) that are essentially representative. 
 
 
 ## Setup
@@ -61,3 +65,8 @@ Sample data to play with is in /src/data.
 
 <!-- 
 ![alt text](_results/_files/sr-smear-contacts_5MB.gif) -->
+["Q: Who You Going to Call ?!"](_results/_files/sr-smear-contacts.webm)
+
+<video controls loop autoplay src="_results/_files/sr-smear-contacts.mp4" title="Q: Who You Going to Call ?!"></video>
+
+<video controls loop autoplay src="_results/_files/sr-argatroban.mp4" title="Q: Which Anticoagulants Have the Shortest Half-Life ?!"></video>
