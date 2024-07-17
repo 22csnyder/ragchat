@@ -57,3 +57,7 @@ Sample data to play with is in /src/data.
 
 
 
+<video controls loop autoplay src="_results/_files/sr-smear-contacts.mp4" title="Q: Who You Going to Call ?!"></video>
+
+<!-- 
+![alt text](_results/_files/sr-smear-contacts_5MB.gif) -->
